@@ -1,1 +1,12 @@
 /* Will be compiled down to a single stylesheet with your sass files */
+
+#logo {
+  color: #FFEE00;
+  font-size: 14pt;
+  font-family: 'Audiowide';
+  letter-spacing: 5px; 
+}
+
+.virta-content {
+  margin: 10px;
+}
