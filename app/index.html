@@ -28,11 +28,15 @@
 
     <!-- Add your site or application content here -->
     
-    <nav-bar-top title="VIRTA">
-      <nav-location href="#/" title="Home">Home</nav-location>
-      <nav-location href="#/about" title="About">About</nav-location>
-    </nav-bar-top>
-    <div class="virta-content" ng-view></div>
+    <div ng-show="showMenu">
+      <nav-bar-top title="VIRTA">
+        <nav-location href="#/home" title="Home">Home</nav-location>
+        <nav-location href="#/project-list" title="Projects">Projects</nav-location>
+      </nav-bar-top>
+    </div>
+
+    <div class="virta-content" ng-view>
+    </div>
 
     <script src="components/angular/angular.js"></script>
     <script src="components/angular-resource/angular-resource.js"></script>
@@ -41,8 +45,11 @@
 
     <!-- build:js scripts/scripts.js -->
     <script src="scripts/app.js"></script>
-    <script src="scripts/controllers/main.js"></script>
-    <script src="scripts/controllers/about.js"></script>
+    <script src="scripts/services/session.js"></script>
+
+    <script src="scripts/controllers/home.js"></script>
+    <script src="scripts/controllers/project-list.js"></script>
+    <script src="scripts/controllers/plug-in.js"></script>
     <!-- endbuild -->
   </body>
 </html>

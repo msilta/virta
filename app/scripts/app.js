@@ -1,28 +1,19 @@
 'use strict';
 
-/*
 angular.module('virtaApp', [])
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
+        templateUrl: 'views/plug-in.html',
+        controller: 'PlugInCtrl'
       })
-      .otherwise({
-        redirectTo: '/'
-      });
-  });
-*/
-
-angular.module('virtaApp', [])
-  .config(function ($routeProvider) {
-    $routeProvider
-      .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
+      .when('/home', {
+        templateUrl: 'views/home.html',
+        controller: 'HomeCtrl'
       })
-      .when('/about', {
-        templateUrl: 'views/about.html'
+      .when('/project-list', {
+        templateUrl: 'views/project-list.html',
+        controller: 'ProjectListCtrl'
       })
       .otherwise({
         redirectTo: '/'
@@ -38,7 +29,7 @@ angular.module('virtaApp', [])
       '<div class="navbar navbar-inverse navbar-static-top">' +
         '<div class="navbar-inner">' +
           '<div class="container">' +
-            '<a id="logo" class="brand" href="#/">{{title}}</a>' +
+            '<a id="logo" class="brand" href="#/home">{{title}}</a>' +
             '<ul class="nav" ng-transclude></ul>' +
           '</div>' +
         '</div>' +
