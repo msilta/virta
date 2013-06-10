@@ -1,10 +1,47 @@
 /* Will be compiled down to a single stylesheet with your sass files */
 
 #logo {
-  color: #FFEE00;
+  color: #47C6FC;
   font-size: 14pt;
   font-family: 'Audiowide';
   letter-spacing: 5px; 
+}
+
+#big-logo {
+  margin-bottom: 20px;
+  color: #47C6FC;
+  font-size: 28pt;
+  font-family: 'Audiowide';
+  letter-spacing: 8px;
+  text-align: center;
+}
+
+.plugged-in {
+  float: right;
+  padding: 10px 20px 10px;
+}
+
+.plugged-in > a {
+  color: #999999;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+
+.plugged-in > a:hover {
+  text-decoration: none;
+  color: #FFFFFF;
+}
+
+.plugged-in > .divider {
+  margin: 0 8px;
+}
+
+.center-block {
+  margin:0 auto;
+  float:none;
+}
+
+.center {
+  text-align: center;
 }
 
 .virta-content {

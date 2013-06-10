@@ -27,13 +27,11 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    
-    <div ng-show="showMenu">
-      <nav-bar-top title="VIRTA">
-        <nav-location href="#/home" title="Home">Home</nav-location>
-        <nav-location href="#/project-list" title="Projects">Projects</nav-location>
-      </nav-bar-top>
-    </div>
+
+    <nav-bar-top title="VIRTA" username="{{session.getUsername()}}" show="{{session.isPluggedIn()}}">
+      <nav-location href="#/home" title="Home">Home</nav-location>
+      <nav-location href="#/project-list" title="Projects">Projects</nav-location>
+    </nav-bar-top>
 
     <div class="virta-content" ng-view>
     </div>

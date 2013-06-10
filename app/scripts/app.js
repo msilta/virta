@@ -18,19 +18,27 @@ angular.module('virtaApp', [])
       .otherwise({
         redirectTo: '/'
       })
-}).directive('navBarTop', function() {
+}).run(["$rootScope", "session", function($rootScope, session) {
+    return $rootScope.session = session;
+  }
+]).directive('navBarTop', function() {
   return {
     restrict: 'E',
     transclude: true,
     scope: {
-      'title': '@'
+      'title': '@title',
+      'currentUser': '@username',
+      'showNavbar': '@show'
     },
     template:
-      '<div class="navbar navbar-inverse navbar-static-top">' +
+      '<div class="navbar navbar-inverse navbar-static-top" ng-show="showNavbar">' +
         '<div class="navbar-inner">' +
           '<div class="container">' +
             '<a id="logo" class="brand" href="#/home">{{title}}</a>' +
             '<ul class="nav" ng-transclude></ul>' +
+            '<div class="plugged-in">{{currentUser}}<span class="divider">|</span>' +
+              '<a href="/#/" title="Plug out">Plug out</a>' +
+            '</div>' +
           '</div>' +
         '</div>' +
       '</div>',
