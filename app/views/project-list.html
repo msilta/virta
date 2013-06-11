@@ -1,0 +1,26 @@
+<div class="container">
+  <h2>Projects</h2>
+
+  <label class="checkbox pull-right">
+    <input type="checkbox" ng-model="search.isActive" /> Active only
+  </label>
+
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Is Active</th>
+        <th>Scrum Master</th>
+        <th>Product Owner</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="project in projects | filter:filterProjects">
+        <td>{{project.name}}</td>
+        <td><i class="icon-ok" ng-show="project.isActive"></i></td>
+        <td>{{project.scrumMaster}}</td>
+        <td>{{project.productOwner}}</td>
+      </tr>    
+    </tbody>
+  </table>
+</div>
