@@ -30,7 +30,7 @@
 
     <virta-nav-bar title="VIRTA" username="{{session.getUsername()}}" show="{{session.isPluggedIn()}}">
       <virta-nav-item href="#/home" title="Home">Home</virta-nav-item>
-      <virta-nav-item href="#/project-list" title="Projects">Projects</virta-nav-item>
+      <virta-nav-item href="#/projects" title="Projects">Projects</virta-nav-item>
     </virta-nav-bar>
 
     <div class="virta-content" ng-view>
@@ -49,6 +49,7 @@
     <script src="scripts/controllers/project-list.js"></script>
     <script src="scripts/controllers/plug-in.js"></script>
     <script src="scripts/directives/navbar.js"></script>
+    <script src="scripts/services/projectStorage.js"></script>
     <!-- endbuild -->
   </body>
 </html>

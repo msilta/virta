@@ -11,7 +11,7 @@ angular.module('virtaApp', [])
         templateUrl: 'views/home.html',
         controller: 'HomeCtrl'
       })
-      .when('/project-list', {
+      .when('/projects', {
         templateUrl: 'views/project-list.html',
         controller: 'ProjectListCtrl'
       })

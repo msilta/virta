@@ -1,26 +1,47 @@
 <div class="container">
-  <h2>Projects</h2>
 
-  <label class="checkbox pull-right">
-    <input type="checkbox" ng-model="search.isActive" /> Active only
-  </label>
+  <div class="row">
+    <div class="span6">
+      <h2>Projects</h2>
+    </div>
+    <div class="span6">
+      <form id="project-form" ng-submit="addProject()">
+	      <input id="new-project" class="input-medium" placeholder="Project name" ng-model="newProject" autofocus />
+	    </form>
+    </div>
+  </div>
 
-  <table class="table table-hover">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Is Active</th>
-        <th>Scrum Master</th>
-        <th>Product Owner</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr ng-repeat="project in projects | filter:filterProjects">
-        <td>{{project.name}}</td>
-        <td><i class="icon-ok" ng-show="project.isActive"></i></td>
-        <td>{{project.scrumMaster}}</td>
-        <td>{{project.productOwner}}</td>
-      </tr>    
-    </tbody>
-  </table>
+  <div class="row">
+    <div class="span12">
+      <label class="checkbox pull-right">
+        <input type="checkbox" ng-model="search.isActive" /> Active only
+      </label>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="span12">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Is Active</th>
+            <th>Scrum Master</th>
+            <th>Product Owner</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="project in projects | filter:filterProjects">
+            <td>{{project.name}}</td>
+            <td><i class="icon-ok" ng-show="project.isActive"></i></td>
+            <td>{{project.scrumMaster}}</td>
+            <td>{{project.productOwner}}</td>
+            <td><button ng-click="removeProject(project)"><i class="icon-remove"></i> Delete</button></td>
+          </tr>    
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
 </div>

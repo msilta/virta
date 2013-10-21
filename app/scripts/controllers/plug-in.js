@@ -6,8 +6,9 @@ angular.module('virtaApp')
     $scope.username = '';
 
     $scope.plugIn = function() {
-      session.plugIn($scope.username);
-      //window.location = '/#/home';
-      $location.path("home");
+      if ($scope.username) {
+        session.plugIn($scope.username);
+        $location.path("home");
+      }
     };
   });
